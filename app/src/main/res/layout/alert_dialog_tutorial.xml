@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginVertical="@dimen/_15sdp"
+        android:visibility="gone"
+        android:background="@drawable/dr_white_fill_10">
+
+        <RelativeLayout
+            android:padding="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icWallet"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:src="@drawable/ic_wallet"
+                android:layout_alignParentStart="true"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWalletTitle"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Wallet"
+                android:layout_toEndOf="@id/icWallet"
+                android:layout_marginHorizontal="@dimen/_8sdp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llPublicCharging"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp"
+        android:background="@drawable/dr_white_fill_10">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSkip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="Skip" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/tutorialViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp" />
+
+        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:dotsClickable="true"
+            app:dotsColor="@color/colorSecondary"
+            app:dotsSize="8dp"
+            app:dotsSpacing="4dp"
+            app:selectedDotColor="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnBack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="Back"
+                android:textColor="@color/black"
+                android:visibility="invisible" />
+
+            <RelativeLayout
+                android:id="@+id/rlNext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@drawable/dr_button_primary_bg_10">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:text="Next"
+                    android:textColor="@color/colorWhite"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
