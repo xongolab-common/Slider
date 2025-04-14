@@ -69,4 +69,7 @@ dependencies {
 
     implementation(libs.androidx.viewpager2)
     implementation(libs.tbuonomo.dotsindicator)
+
+    // Glide
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 }

@@ -41,4 +41,15 @@
             android:paddingVertical="@dimen/_10sdp"
             android:background="@drawable/dr_button_primary_bg_10"/>
 
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnCarousel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Carousel Slider"
+            android:textColor="@color/colorWhite"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:background="@drawable/dr_button_primary_bg_10"/>
+
 </androidx.appcompat.widget.LinearLayoutCompat>

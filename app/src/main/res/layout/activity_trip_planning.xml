@@ -38,8 +38,15 @@
                 android:layout_centerVertical="true"
                 android:layout_marginHorizontal="@dimen/_15sdp"
                 android:layout_alignParentStart="true"
-                app:selectedDotColor="@color/colorPrimary"
-                />
+                app:selectedDotColor="@color/colorPrimary" />
+
+            <LinearLayout
+                android:id="@+id/layoutDots"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerVertical="true"
+                android:layout_centerInParent="true"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvSkip"

@@ -3,8 +3,11 @@ package com.example.slider.trip_planning_viewpager
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.viewpager.widget.ViewPager
@@ -22,6 +25,7 @@ class TripPlanningActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.tvSkip.setOnClickListener(this)
         setUpViewPager()
+        addBottomDots(0)
     }
 
     override fun onClick(v: View?) {
@@ -32,6 +36,24 @@ class TripPlanningActivity : AppCompatActivity(), View.OnClickListener {
             R.id.tvSkip ->{
                 onBackPressed()
             }
+        }
+    }
+
+    // Custom Dot
+    private fun addBottomDots(currentPage: Int) {
+        val dots = arrayOfNulls<ImageView>(tripPlanningAdapter.count)
+        binding.layoutDots.removeAllViews()
+
+        for (i in dots.indices) {
+            dots[i] = ImageView(this)
+            val params = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+            params.setMargins(8, 0, 8, 0)
+            dots[i]?.layoutParams = params
+            dots[i]?.setImageResource(if (i == currentPage) R.drawable.dot_active else R.drawable.dot_inactive)
+            binding.layoutDots.addView(dots[i])
         }
     }
 
@@ -73,6 +95,7 @@ class TripPlanningActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             override fun onPageSelected(position: Int) {
+                addBottomDots(position)
                 when (position) {
                     0 -> {
                         binding.rlBtnNext.visibility = View.VISIBLE

@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.slider.carousel_slider.CarouselActivity
 import com.example.slider.databinding.ActivityMainBinding
 import com.example.slider.databinding.ActivityTripPlanningBinding
 import com.example.slider.position_slider.PositionActivity
@@ -32,6 +33,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnPosition.setOnClickListener {
             startActivity(Intent(this, PositionActivity::class.java))
+        }
+
+        binding.btnCarousel.setOnClickListener {
+            startActivity(Intent(this, CarouselActivity::class.java))
         }
 
 
